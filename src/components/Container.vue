@@ -1,8 +1,6 @@
 <template>
   <div>
-    <Post :data="data" />
-    <Post />
-    <Post />
+    <Post :data="data[index]" v-for="(item, index) in data" :key="index"/>
   </div>
 </template>
 
@@ -12,10 +10,10 @@ import Post from './Post.vue'
 export default {
     name : 'Container',
     components : {
-        Post
+      Post
     },
     props : {
-        data : Array
+      data : Object
     }
 }
 </script>
